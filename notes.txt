@@ -1,0 +1,7 @@
+create migration tables 
+php artisan make:migration create_roles_table
+
+correct the tables migration
+
+run migration 
+php artisan migrate(when run this command, tables get created in phpmyadmin)
