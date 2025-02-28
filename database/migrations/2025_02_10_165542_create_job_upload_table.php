@@ -33,7 +33,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('company_id')->references('company_id')->on('company_profiles')->onDelete('cascade');
+            $table->foreign(columns: 'company_id')->references(columns:'id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('category_id')->on('job_categories')->onDelete('cascade');
             $table->foreign('department_id')->references('department_id')->on('job_departments')->onDelete('cascade');
             $table->foreign('country_id')->references('country_id')->on('country')->onDelete('cascade');
@@ -50,3 +50,5 @@ return new class extends Migration
         Schema::dropIfExists('job_upload');
     }
 };
+//ALTER TABLE job_applied DROP FOREIGN KEY job_applied_job_id_foreign;
+//ALTER TABLE job_applied DROP INDEX job_applied_job_id_foreign;

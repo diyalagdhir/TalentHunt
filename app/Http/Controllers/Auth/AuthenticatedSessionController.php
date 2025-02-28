@@ -23,23 +23,33 @@ class AuthenticatedSessionController extends Controller
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request): RedirectResponse
-    {
-        $request->authenticate();
-        $request->session()->regenerate();
-    
-        // Get the authenticated user
-        $user = Auth::user();
-    
-        // Redirect based on role_id
-        if ($user->role_id == 1) {
-            return redirect()->route('jobseeker.dashboard'); // Job Seeker
-        } elseif ($user->role_id == 2) {
-            return redirect()->route('recruiter.dashboard'); // Recruiter
-        }
-    
-        // Default fallback if role_id is not recognized
-        return redirect()->route('dashboard');
+{
+    // Validate login request
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|string|min:8',
+    ]);
+
+    // Check if the user exists in the database
+    $user = \App\Models\User::where('email', $request->email)->first();
+
+    if (!$user) {
+        return redirect()->route('register')->with('error', 'No account found. Please register.');
     }
+
+    // Attempt login
+    $request->authenticate();
+    $request->session()->regenerate();
+
+    // Redirect based on role_id
+    if ($user->role_id == 1) {
+        return redirect()->route('jobseeker.dashboard');
+    } elseif ($user->role_id == 2) {
+        return redirect()->route('jobseeker.dashboard');
+    }
+
+    return redirect()->route('jobseeker.index');
+}
 
     /**
      * Destroy an authenticated session.

@@ -28,27 +28,38 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
-    {
-        //dd($request->all());
+{
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],  // Make sure it's unique in the 'users' table
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        'role_id' => ['required', 'exists:roles,id'],  // Ensure the role_id exists in the roles table
+    ]);
 
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'role_id' => ['required', 'exists:roles,id'],
-        ]);
+    
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'role_id' => $request->role_id,
-        ]);
+    // Create the user with the provided data
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'role_id' => $request->role_id,  // Store the role_id in the user record
+    ]);
 
-        event(new Registered($user));
+    // Fire the Registered event
+    event(new Registered($user));
 
-        Auth::login($user);
+    // Log the user in after registration
+    Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+    if ($user->role_id == 1) { // Job Seeker
+        return redirect()->route('jobseeker.dashboard');
+    } 
+    
+    elseif ($user->role_id == 2) { // Recruiter
+        return redirect()->route('recruiter.dashboard');
     }
+
+}
+
 }
