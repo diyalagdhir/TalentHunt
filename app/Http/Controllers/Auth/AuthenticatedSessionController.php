@@ -30,25 +30,26 @@ class AuthenticatedSessionController extends Controller
         'password' => 'required|string|min:8',
     ]);
 
-    // Check if the user exists in the database
-    $user = \App\Models\User::where('email', $request->email)->first();
-
-    if (!$user) {
-        return redirect()->route('register')->with('error', 'No account found. Please register.');
+    // Attempt login using Auth::attempt()
+    if (!Auth::attempt($request->only('email', 'password'))) {
+        return redirect()->route('login')->with('error', 'Invalid email or password. Please try again.');
     }
 
-    // Attempt login
-    $request->authenticate();
     $request->session()->regenerate();
+
+    // Get authenticated user
+    $user = Auth::user();
 
     // Redirect based on role_id
     if ($user->role_id == 1) {
-        return redirect()->route('jobseeker.dashboard');
+        return redirect()->to('/adminDashboard')->with('status', 'Logged in successfully.');
     } elseif ($user->role_id == 2) {
-        return redirect()->route('jobseeker.dashboard');
+        return redirect()->to('/')->with('status', 'Logged in successfully.');
+    } elseif ($user->role_id == 3) {
+        return redirect()->to('/dashboard')->with('status', 'Logged in successfully.');
     }
 
-    return redirect()->route('jobseeker.index');
+    return redirect()->route('login')->with('error', 'Role not recognized.');
 }
 
     /**

@@ -14,7 +14,7 @@ Author URL: http://w3layouts.com
     <link href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <!--//google-fonts -->
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('jobseeker/user/assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{asset('user/assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
@@ -43,7 +43,7 @@ Author URL: http://w3layouts.com
                     <div class="w3l-main-slider banner-slider">
                         <div class="slider-info">
                             <div class="w3l-slidehny-img banner-top1">
-                                <img src="jobseeker/user/assets/images/banner1.jpg" alt="" class="radius-image img-fluid">
+                                <img src="user/assets/images/banner1.jpg" alt="" class="radius-image img-fluid">
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ Author URL: http://w3layouts.com
                                     <div class="photobox photobox_triangular photobox_scale-rotated">
                                         <div class="photobox__previewbox media-placeholder">
                                             <img class="img-fluid photobox__preview media-placeholder__media radius-image" 
-                                                 src="jobseeker/user/assets/images/g1.jpg" alt="">
+                                                 src="user/assets/images/g1.jpg" alt="">
                                         </div>
                                         <div class="photobox__info-wrapper">
                                             <div class="photobox__info"><span>IT & Software</span></div>
@@ -165,7 +165,7 @@ Author URL: http://w3layouts.com
                                     <div class="photobox photobox_triangular photobox_scale-rotated">
                                         <div class="photobox__previewbox media-placeholder">
                                             <img class="img-fluid photobox__preview media-placeholder__media radius-image" 
-                                                 src="jobseeker/user/assets/images/g2.jpg" alt="">
+                                                 src="user/assets/images/g2.jpg" alt="">
                                         </div>
                                         <div class="photobox__info-wrapper">
                                             <div class="photobox__info"><span>Marketing</span></div>
@@ -191,7 +191,7 @@ Author URL: http://w3layouts.com
                                     <div class="photobox photobox_triangular photobox_scale-rotated">
                                         <div class="photobox__previewbox media-placeholder">
                                             <img class="img-fluid photobox__preview media-placeholder__media radius-image" 
-                                                 src="jobseeker/user/assets/images/g3.jpg" alt="">
+                                                 src="user/assets/images/g3.jpg" alt="">
                                         </div>
                                         <div class="photobox__info-wrapper">
                                             <div class="photobox__info"><span>Finance & Banking</span></div>
@@ -214,55 +214,36 @@ Author URL: http://w3layouts.com
 </section>
 <!--//img-grids - Featured Job Categories-->
 
-<!--/video-section-->
-<section class="w3l-video" id="video">
-    <div class="video-mid-w3 py-5">
-        <div class="container py-md-5 py-3">
-            <!--/row-1-->
-            <div class="row">
-                <div class="col-lg-6 mt-lg-0 mb-5 align-self pe-lg-3">
-                    <div class="title-content text-left">
-                        <h6 class="title-subhny mb-2">Accelerate Your Career</h6>
-                        <h3 class="title-w3l two">Find Your Dream Job Faster</h3>
-                    </div>
-                    <p class="mt-md-4 mt-3">
-                        Looking for the perfect job? Our platform connects you with top recruiters and exciting job opportunities. 
-                        Upload your resume, apply for jobs, and take the next step in your career with ease.
-                    </p>
-                    <div class="w3l-two-buttons mt-4">
-                        <a class="btn btn-primary btn-style me-2" 
-                            href="{{ auth()->check() ? route('available_jobs') : route('register') }}">
-                            Browse Jobs
-                        </a>
-                        <a class="btn btn-primary btn-style me-2" 
-                            href="{{ route('about') }}">
-                            About Us
-                        </a>                    </div>
-                </div>
-                <div class="col-lg-6 videow3-right ps-lg-5">
-                    <div class="w3l-index5 py-5">
-                        <div class="history-info align-self text-center py-5 my-lg-5">
-                            <div class="position-relative py-5">
-                                <a href="#small-dialog1" class="popup-with-zoom-anim play-view text-center position-absolute">
-                                    <span class="video-play-icon">
-                                        <span class="fa fa-play"></span>
-                                    </span>
-                                </a>
-                                <!-- Video Popup -->
-                                <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
-                                    <iframe src="https://www.youtube.com/embed/Tz0aH2JadqE" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+
+<!-- Testimonials Section -->
+<section class="w3l-clients" id="clients">
+    <div class="cusrtomer-layout py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="testimonial-width">
+                <div class="item">
+                    <div class="testimonial-content">
+                        <div class="testimonial">
+                            <blockquote>
+                                <i class="fas fa-quote-left"></i>
+                                <q> This platform helped me land my dream job within weeks! The application process was smooth, and I connected with top recruiters easily.</q>
+                            </blockquote>
+                            <div class="testi-des">
+                                <div class="peopl align-self">
+                                    <h3>Sarah Thompson</h3>
+                                    <p class="indentity">Marketing Specialist, New York</p>
                                 </div>
-                                <!-- Video Popup -->
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
-            <!--//row-1-->
         </div>
     </div>
 </section>
-<!--//video-section-->
+<!-- //Testimonials Section -->
+
 
 <!--/tabs-faqs-->
 <section class="w3l-products w3l-faq-block py-5" id="projects">
@@ -274,7 +255,7 @@ Author URL: http://w3layouts.com
         <div class="row">
             <div class="col-lg-6 mx-auto pe-lg-5">
                 <div class="w3hny-business-img">
-                    <img src="jobseeker/user/assets/images/g8.jpg" alt="Job Search" class="img-fluid radius-image">
+                    <img src="user/assets/images/g8.jpg" alt="Job Search" class="img-fluid radius-image">
                 </div>
             </div>
             <div class="col-lg-6 mt-lg-0 mt-sm-5 mt-4">
@@ -330,63 +311,6 @@ Author URL: http://w3layouts.com
 </section>
 <!--//tabs-faqs-->
 
-<!-- Testimonials Section -->
-<section class="w3l-clients" id="clients">
-    <div class="cusrtomer-layout py-5">
-        <div class="container py-lg-5 py-md-3">
-            <div class="testimonial-width">
-                <div class="item">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <blockquote>
-                                <i class="fas fa-quote-left"></i>
-                                <q> This platform helped me land my dream job within weeks! The application process was smooth, and I connected with top recruiters easily.</q>
-                            </blockquote>
-                            <div class="testi-des">
-                                <div class="peopl align-self">
-                                    <h3>Sarah Thompson</h3>
-                                    <p class="indentity">Marketing Specialist, New York</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //Testimonials Section -->
-
-<!-- Newsletter Subscription Section -->
-{{-- <section class="w3l-project-main">
-    <div class="container">
-        <div class="w3l-project py-md-5 py-4">
-            <div class="row py-5 align-items-center">
-                <div class="col-lg-6 w3l-project-right">
-                    <div class="bottom-info">
-                        <div class="header-section pr-lg-5">
-                            <h6 class="title-subhny mb-2">Stay Updated!</h6>
-                            <h3 class="title-w3l">Subscribe for Job Alerts & Career Tips</h3>
-                            <p class="mt-3">Be the first to know about new job openings, hiring trends, and expert career advice.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 w3l-project-left">
-                    <form action="{{ route('contact') }}" method="post" class="subscribe-wthree mt-lg-5 mt-4">
-                        @csrf
-                        <div class="flex-wrap subscribe-wthree-field">
-                            <input class="form-control" type="email" placeholder="Enter Your Email" name="email" required>
-                            <button class="btn btn-style btn-primary" type="submit">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-<!-- //Newsletter Subscription Section -->   
-
 
     <!--//w3l-project-->
     <!-- footer -->
@@ -394,9 +318,9 @@ Author URL: http://w3layouts.com
     <!-- //footer -->
     <!-- Js scripts -->
     <!-- Template JavaScript -->
-    <script src="{{asset('jobseeker/user/assets/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('jobseeker/user/assets/js/theme-change.js')}}"></script>
-     <script src="{{asset('jobseeker/user/assets/js/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/theme-change.js')}}"></script>
+     <script src="{{asset('user/assets/js/jquery-1.9.1.min.js')}}"></script>
     <script>
         const items = document.querySelectorAll(".accordion button");
 
@@ -458,7 +382,7 @@ Author URL: http://w3layouts.com
     <!-- //disable body scroll which navbar is in active -->
 
     <!-- //bootstrap -->
-    <script src="{{asset('jobseeker/user/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/bootstrap.min.js')}}"></script>
 
 </body>
 

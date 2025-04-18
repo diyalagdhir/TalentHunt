@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('company_profiles', function (Blueprint $table) {
             $table->id('company_id');
             $table->text('description');
-            $table->BigInteger('registration_number');
-            $table->string('industry_type');
-            $table->BigInteger('contact');
-            $table->text('address');
-            $table->string('website_url');
-            $table->string('established_date');
-            $table->string('num_of_emp');
+            $table->BigInteger('registration_number')->nullable();
+            $table->string('industry_type')->nullable();
+            $table->BigInteger('contact')->nullable();
+            $table->text('address')->nullable();
+            $table->string('website_url')->nullable();
+            $table->string('established_date')->nullable();
+            $table->string('num_of_emp')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('country_id');
             $table->unsignedBigInteger('state_id');

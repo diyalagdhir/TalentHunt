@@ -19,36 +19,44 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                     </li>
+                    @if(Auth::check())
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('feedback') }}">Feedback</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('available_jobs')}}">Jobs</a>
+                    </li>
+                    @endif
                 </ul>
 
                 <!-- Account Dropdown Button -->
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        @if (Auth::check())
-                            {{ Auth::user()->name }}
-                        @else
-                            Account
-                        @endif
-                    </button>
-                    <ul class="dropdown-menu text-center dropdown-menu-end" aria-labelledby="accountDropdown">
-                        @if (Auth::check())
-                            @if (Auth::user()->role_id == 1) <!-- Assuming role_id 1 is for Job Seekers -->
-                                <li><a class="dropdown-item" href="{{ route('available_jobs') }}">All Jobs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('applied_jobs') }}">My Jobs</a></li>
-                            @endif
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button type="submit" class="dropdown-item">Logout</button>
-                            </form>
-                        @else
-                            <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
-                            <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                        @endif
-                    </ul>
-                </div>
+
+                @if(Auth::check())
+                <li class="nav-item me-lg-3">
+                    
+                    <div class="dropdown">
+                        <button class="phone-btn btn btn-primary btn-style ms-2 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{Auth::user()->name}}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href=" {{ route('applied_jobs') }} ">My Jobs </a></li>
+                            <li><a class="dropdown-item" href="{{ route('userProfile') }}">Update Profile</a></li>
+                            <li><a class="dropdown-item" href="/">Make Resume</a></li>
+                            <li class="nav-item me-lg-3">
+                                <form action="{{ route('logout') }}" method="POST" class="d-none d-lg-block">
+                                    @csrf
+                                    <button type="submit" class="phone-btn btn btn-primary btn-style ms-2">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                @else
+                <li class="nav-item me-lg-3">
+                    <a href="{{ route('login') }}" class="phone-btn btn btn-primary btn-style d-none d-lg-block ms-2">Login</a>
+                </li>
+                @endif
+
             </div>
         </nav>
     </div>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('interview_id'); 
             $table->date('schedule_date');
             $table->time('start_time'); 
-            $table->time('end_time'); 
+            $table->time('end_time')->nullable(); 
             $table->text('meeting_link')->nullable(); 
             $table->string('status')->default('scheduled'); 
             

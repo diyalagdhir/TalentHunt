@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TalentHunt - About Us</title>
+    <title>About Us</title>
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('jobseeker/user/assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{asset('user/assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -28,110 +28,149 @@
         </div>
     </section>
     
-    <section class="w3l-feature-with-photo-1">
-        <div class="feature-with-photo-hny py-5">
-            <div class="container py-lg-5">
-                <div class="feature-with-photo-content">
-                    <div class="row mb-lg-5 mb-3">
-                        <div class="col-lg-7 ab-right pl-lg-5">
-                            <h6 class="title-subhny mb-2"><span>About TalentHunt</span></h6>
-                            <h3 class="title-w3l mb-4">Connecting Job Seekers with Top Employers</h3>
-                            <p class="mt-4">TalentHunt is dedicated to bridging the gap between talented job seekers and leading employers. Our platform provides a seamless experience for individuals looking for their dream job and companies searching for the right talent. With our cutting-edge technology and industry insights, we simplify the hiring process for everyone.</p>
-                            <div class="w3l-buttons mt-sm-5 mt-4">
-                                <a class="btn btn-primary btn-style me-2" href="{{ route('available_jobs') }}">Find Jobs</a>
-                                <a class="btn btn-outline-primary btn-style" href="{{ route('available_jobs') }}">Hire Talent</a>
-                            </div>
+<!-- About Section -->
+<section class="w3l-about py-5">
+    <div class="container py-md-5 py-4">
+        <div class="row">
+            <div class="col-lg-6 ab-left ps-lg-5">
+                <img src="{{asset('user/assets/images/g3.jpg')}}" class="img-fluid radius-image" alt="Job Portal">
+            </div>
+            <div class="col-lg-6 mt-lg-0 mt-5">
+                <h3 class="title">Connecting Talent with Opportunities</h3>
+                <p class="mt-3">
+                    Welcome to <strong>TalentHunt</strong>, your go-to job portal dedicated to bridging the gap between job seekers and recruiters. We aim to simplify job searching and hiring, making the process seamless, efficient, and rewarding.
+                </p>
+                <p class="mt-2">
+                    Whether you're looking for your dream job or searching for the perfect candidate, TalentHunt provides the platform to help you succeed. Join us today and take the next step in your career journey.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="w3l-feature-with-photo-1">
+    <div class="feature-with-photo-hny py-1">
+        <div class="container py-lg-5">
+            <div class="feature-with-photo-content">
+                <div class="ab-in-flow row mb-lg-5 mb-3">
+                    <!-- Left Section - About Us Text -->
+                    <div class="col-lg-7 ab-right pl-lg-5">
+                        <h3 class="title-w3l mb-4">Your Gateway to the Best Job Opportunities</h3>
+                        <p class="mt-4">At TalentHunt, we connect talented professionals with top employers around the globe. Whether you're looking for your next job or the ideal candidate, we offer a wide range of job listings, career resources, and recruitment services tailored to your needs. Our platform simplifies the job search and application process, empowering job seekers and companies alike.</p>
+
+                        <p>From tech to marketing, healthcare to engineering, we provide access to jobs across various industries. Join thousands of other users who have found their dream jobs with us, or post your job vacancies to attract top talent to your organization.</p>
+
+                        <div class="w3l-buttons mt-sm-5 mt-4">
+                            <a class="btn btn-primary btn-style me-2" href="{{ route('about') }}">Learn More About Us</a>
+                            <a class="btn btn-outline-primary btn-style mr-2" href="{{ route('available_jobs') }}">Browse Jobs</a>
                         </div>
-                        <div class="col-lg-5 ab-left ps-lg-5">
-                            <img src="jobseeker/user/assets/images/ab1.jpg" class="img-fluid radius-image" alt="About Us">
+                    </div>
+
+                    <!-- Right Section - Image -->
+                    <div class="col-lg-5 ab-left ps-lg-5">
+                        <img src="{{asset('user/assets/images/ab1.jpg')}}" class="img-fluid radius-image" alt="Job Portal">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section class="w3l-servicesblock w3l-servicesblock1 py-5">
-        <div class="container py-lg-5 py-md-4 py-2">
-            <div class="row">
-                <div class="col-lg-6 mb-lg-0 mb-5 pe-lg-5">
-                    <h6 class="title-subhny mb-2">Our Mission</h6>
-                    <h3 class="title-w3l">Empowering Careers, Enabling Businesses</h3>
-                    <p class="mt-md-4 mt-3">Our mission is to create opportunities for professionals by offering an intuitive and dynamic job portal that meets the evolving demands of the job market. We strive to make recruitment efficient, transparent, and accessible for both job seekers and employers.</p>
-                </div>
-                <div class="col-lg-6 align-self pe-lg-4">
-                    <div class="progress-info">
-                        <h6 class="progress-tittle">Successful Placements <span>85%</span></h6>
-                        <div class="progress">
-                            <div class="progress-bar" style="width:85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+</section>
+
+<section class="w3l-feature-with-photo-1">
+    <div class="feature-with-photo-hny py-1">
+        <div class="container py-lg-5">
+            <div class="feature-with-photo-content">
+                <div class="ab-in-flow row mb-lg-5 mb-3">
+                    
+                    <!-- Left Section - Image -->
+                    <div class="col-lg-5 ab-left pe-lg-5">
+                        <img src="{{asset('user/assets/images/ab2.jpg')}}" class="img-fluid radius-image" alt="Career Growth">
+                    </div>
+
+                    <!-- Right Section - About Us Text -->
+                    <div class="col-lg-7 ab-right pr-lg-5">
+                        <h3 class="title-w3l mb-4">Empowering Careers, Connecting Talent</h3>
+                        <p class="mt-4">
+                            TalentHunt is your trusted partner in career growth and recruitment success. Our platform is designed to help job seekers find meaningful employment and assist employers in hiring the right talent efficiently. 
+                        </p>
+
+                        <p>
+                            Whether you're a fresh graduate, an experienced professional, or a company looking to build an exceptional team, we offer a seamless job search and recruitment experience. Explore a variety of industries and find the right opportunities that match your skills and aspirations.
+                        </p>
+
+                        <div class="w3l-buttons mt-sm-5 mt-4">
+                            <a class="btn btn-primary btn-style me-2" href="{{ route('about') }}">Learn More</a>
+                            <a class="btn btn-outline-primary btn-style" href="{{ route('available_jobs') }}">Find Jobs</a>
                         </div>
                     </div>
-                    <div class="progress-info">
-                        <h6 class="progress-tittle">Employer Satisfaction <span>90%</span></h6>
-                        <div class="progress">
-                            <div class="progress-bar" style="width:90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div class="w3l-team-main py-5" id="team">
-        <div class="container py-md-5 py-3">
-            <div class="header-secw3 text-center">
-                <h6 class="title-subhny mb-2">Meet Our Team</h6>
-                <h3 class="title-w3l mb-3">The TalentHunt Experts</h3>
-            </div>
-            <div class="row w3ls_team_grids text-center">
-                <div class="col-md-3 col-6 w3_agile_team_grid mt-md-5 mt-4">
-                    <img src="jobseeker/user/assets/images/team1.jpg" class="img-fluid radius-image" alt="Team Member">
-                    <h4>John Doe</h4>
-                    <p>CEO & Founder</p>
-                </div>
-                <div class="col-md-3 col-6 w3_agile_team_grid mt-md-5 mt-4">
-                    <img src="jobseeker/user/assets/images/team2.jpg" class="img-fluid radius-image" alt="Team Member">
-                    <h4>Jane Smith</h4>
-                    <p>Head of Recruitment</p>
-                </div>
-                <div class="col-md-3 col-6 w3_agile_team_grid mt-md-5 mt-4">
-                    <img src="jobseeker/user/assets/images/team3.jpg" class="img-fluid radius-image" alt="Team Member">
-                    <h4>Robert Brown</h4>
-                    <p>HR Consultant</p>
-                </div>
-                <div class="col-md-3 col-6 w3_agile_team_grid mt-md-5 mt-4">
-                    <img src="jobseeker/user/assets/images/team4.jpg" class="img-fluid radius-image" alt="Team Member">
-                    <h4>Emily Wilson</h4>
-                    <p>Tech Lead</p>
+                    
                 </div>
             </div>
         </div>
     </div>
-    
-    <section class="w3l-project-main">
-        <div class="container">
-            <div class="w3l-project py-md-5 py-4">
-                <div class="row py-5 align-items-center">
-                    <div class="col-lg-8 w3l-project-right">
-                        <h3 class="title-w3l">Looking for a Job or Hiring Talent?</h3>
-                    </div>
-                    <div class="col-lg-4 w3l-project-left">
-                        <div class="w3l-buttons d-sm-flex">
-                            <a class="btn btn-primary btn-style me-2" href="{{ route('register') }}">Sign Up</a>
-                            <a class="btn btn-outline-primary btn-style" href="{{ route('contact') }}">Contact Us</a>
-                        </div>
-                    </div>
+</section>
+
+<!-- Our Services -->
+<section class="w3l-services py-5 bg-light">
+    <div class="container py-md-5 py-4">
+        <h3 class="title text-center">What We Offer</h3>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="service-box">
+                    <i class="fas fa-users icon"></i>
+                    <h4>For Job Seekers</h4>
+                    <p>Access job opportunities across various industries, apply with ease, and track your applications seamlessly.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-box">
+                    <i class="fas fa-briefcase icon"></i>
+                    <h4>For Recruiters</h4>
+                    <p>Find top talent effortlessly, post job listings, and manage applications with our user-friendly dashboard.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="w3l-features py-5">
+    <div class="container py-md-5 py-4">
+        <h3 class="title text-center">Why Choose TalentHunt?</h3>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Easy to Use</h4>
+                    <p>Our platform offers a smooth and user-friendly experience for both job seekers and recruiters.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Secure & Reliable</h4>
+                    <p>We prioritize your data security and ensure a safe job search and hiring experience.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Our dedicated support team is always ready to assist you whenever you need help.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     
     @include('jobseeker.common.footer')
 
  <!-- Template JavaScript -->
- <script src="{{asset('jobseeker/user/assets/js/jquery-3.3.1.min.js')}}"></script>
- <script src="{{asset('jobseeker/user/assets/js/theme-change.js')}}"></script>
-  <script src="{{asset('jobseeker/user/assets/js/jquery-1.9.1.min.js')}}"></script>
+ <script src="{{asset('user/assets/js/jquery-3.3.1.min.js')}}"></script>
+ <script src="{{asset('user/assets/js/theme-change.js')}}"></script>
+  <script src="{{asset('user/assets/js/jquery-1.9.1.min.js')}}"></script>
 
     <!-- MENU-JS -->
     <script>
@@ -175,6 +214,6 @@
     <!-- //disable body scroll which navbar is in active -->
 
     <!-- //bootstrap -->
-    <script src="{{asset('jobseeker/user/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/bootstrap.min.js')}}"></script>
 </body>
 </html>

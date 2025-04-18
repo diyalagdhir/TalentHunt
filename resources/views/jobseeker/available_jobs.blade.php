@@ -9,12 +9,12 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TalentHunt - My Jobs</title>
+    <title>All Jobs</title>
     <!--/google-fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <!--//google-fonts -->
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('jobseeker/user/assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{asset('user/assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -87,13 +87,18 @@ Author URL: http://w3layouts.com
                         <i class="fa-solid fa-eye"></i>
                     </a> &nbsp;    
                     <button onclick="setJobId({{ $job->job_id }})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal">Apply</button>
-
-
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+
+{{-- Pagination Links --}}
+<div class="d-flex justify-content-center mt-4">
+    {{ $jobs->links('pagination::bootstrap-4') }} <!-- Use Bootstrap 4 pagination -->
+</div>
+
+
 </div>
 
 <!-- Modal -->
@@ -111,14 +116,38 @@ Author URL: http://w3layouts.com
                     @csrf
                     <input type="hidden" name="job_id" id="job_id">
                     
-                    <label>Resume:</label>
-                    <input type="file" name="resume" required class="form-control">
+                    <!-- Resume Field -->
+                    <div class="mb-3 mt-3">
+                        <label for="resume">Upload Your Resume:</label>
+                        <span class="error" style="color:red;">*</span>
+                        <input type="file" class="form-control" id="resume" name="resume" value="{{ old('resume') }}" required>
+                        <!-- Display Validation Error if Any -->
+                        @error('resume')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                    <label class="mt-2">Experience (Optional):</label>
-                    <input type="text" name="experience" class="form-control">
+                        <!-- Experience Field -->
+                        <div class="mb-3 mt-3">
+                            <label for="experience">Enter Your Experience:</label>
+                            <span class="error" style="color:red;">*</span>
+                            <input type="text" class="form-control" id="experience" name="experience" value="{{ old('experience') }}" required>
+                            <!-- Display Validation Error if Any -->
+                            @error('experience')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
 
-                    <label class="mt-2">Message (Optional):</label>
-                    <textarea name="message" class="form-control"></textarea>
+                   <!-- Cover Message Field -->
+                   <div class="mb-3 mt-3">
+                    <label for="message">Enter Your Cover Message:</label>
+                    <span class="error" style="color:red;">*</span>
+                    <textarea class="form-control" id="message" name="message" required>{{ old('message') }}</textarea>
+                    <!-- Display Validation Error if Any -->
+                    @error('message')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
 
                     <div class="modal-footer mt-3">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -138,68 +167,10 @@ Author URL: http://w3layouts.com
  <!-- //footer -->
  <!-- Js scripts -->
  <!-- Template JavaScript -->
- <script src="{{asset('jobseeker/user/assets/js/jquery-3.3.1.min.js')}}"></script>
- <script src="{{asset('jobseeker/user/assets/js/theme-change.js')}}"></script>
- <!-- faq -->
- <script>
-     const items = document.querySelectorAll(".accordion button");
+ <script src="{{asset('user/assets/js/jquery-3.3.1.min.js')}}"></script>
+ <script src="{{asset('user/assets/js/theme-change.js')}}"></script>
+ <script src="{{asset('user/assets/js/bootstrap.min.js')}}"></script>
 
-     function toggleAccordion() {
-         const itemToggle = this.getAttribute('aria-expanded');
-
-         for (i = 0; i < items.length; i++) {
-             items[i].setAttribute('aria-expanded', 'false');
-         }
-
-         if (itemToggle == 'false') {
-             this.setAttribute('aria-expanded', 'true');
-         }
-     }
-
-     items.forEach(item => item.addEventListener('click', toggleAccordion));
-
- </script>
- <!-- //faq -->
- <!-- MENU-JS -->
- <script>
-     $(window).on("scroll", function() {
-         var scroll = $(window).scrollTop();
-
-         if (scroll >= 80) {
-             $("#site-header").addClass("nav-fixed");
-         } else {
-             $("#site-header").removeClass("nav-fixed");
-         }
-     });
-
-     //Main navigation Active Class Add Remove
-     $(".navbar-toggler").on("click", function() {
-         $("header").toggleClass("active");
-     });
-     $(document).on("ready", function() {
-         if ($(window).width() > 991) {
-             $("header").removeClass("active");
-         }
-         $(window).on("resize", function() {
-             if ($(window).width() > 991) {
-                 $("header").removeClass("active");
-             }
-         });
-     });
-
- </script>
- <!-- //MENU-JS -->
-
- <!-- disable body scroll which navbar is in active -->
- <script>
-     $(function() {
-         $('.navbar-toggler').click(function() {
-             $('body').toggleClass('noscroll');
-         })
-     });
-
- </script>
- <!-- //disable body scroll which navbar is in active -->
 
  <script>
     function setJobId(jobId) {
@@ -211,8 +182,18 @@ Author URL: http://w3layouts.com
     }
 </script>
 
- <!-- //bootstrap -->
- <script src="{{asset('jobseeker/user/assets/js/bootstrap.min.js')}}"></script>
+<!-- Success & Error Alerts -->
+@if(session('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+@endif
+
+@if(session('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+@endif
 
 </body>
 

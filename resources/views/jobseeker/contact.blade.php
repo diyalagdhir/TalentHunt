@@ -9,12 +9,12 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TalentHunt - Contact Us</title>
+    <title>Contact Us</title>
     <!--/google-fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <!--//google-fonts -->
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('jobseeker/user/assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{asset('user/assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
@@ -107,53 +107,12 @@ Author URL: http://w3layouts.com
     <!-- //footer -->
     <!-- Js scripts -->
     <!-- Template JavaScript -->
-    <script src="{{asset('jobseeker/user/assets/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('jobseeker/user/assets/js/theme-change.js')}}"></script>
-     <script src="{{asset('jobseeker/user/assets/js/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/theme-change.js')}}"></script>
+     <script src="{{asset('user/assets/js/jquery-1.9.1.min.js')}}"></script>
+     <script src="{{asset('user/assets/js/bootstrap.min.js')}}"></script>
 
-    <!-- MENU-JS -->
-    <script>
-        $(window).on("scroll", function() {
-            var scroll = $(window).scrollTop();
 
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
-
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function() {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function() {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function() {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-
-    </script>
-    <!-- //MENU-JS -->
-
-    <!-- disable body scroll which navbar is in active -->
-    <script>
-        $(function() {
-            $('.navbar-toggler').click(function() {
-                $('body').toggleClass('noscroll');
-            })
-        });
-
-    </script>
-    <!-- //disable body scroll which navbar is in active -->
-
-    <!-- //bootstrap -->
-    <script src="{{asset('jobseeker/user/assets/js/bootstrap.min.js')}}"></script>
 
 </body>
 

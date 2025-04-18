@@ -9,12 +9,12 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TalentHunt - Feedback</title>
+    <title>Feedback</title>
     <!--/google-fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <!--//google-fonts -->
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('jobseeker/user/assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{asset('user/assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
@@ -56,7 +56,7 @@ Author URL: http://w3layouts.com
             @csrf
             
             <!-- Star Rating -->
-            <div class="mb-3 text-center">
+            <div class="mb-3">
                 <label class="form-label fw-bold">Rate Your Experience</label>
                 <div class="star-rating">
                     <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
@@ -87,72 +87,10 @@ Author URL: http://w3layouts.com
     <!-- //footer -->
     <!-- Js scripts -->
     <!-- Template JavaScript -->
-    <script src="{{asset('jobseeker/user/assets/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('jobseeker/user/assets/js/theme-change.js')}}"></script>
-     <script src="{{asset('jobseeker/user/assets/js/jquery-1.9.1.min.js')}}"></script>
-    <!-- faq -->
-    <script>
-        const items = document.querySelectorAll(".accordion button");
-
-        function toggleAccordion() {
-            const itemToggle = this.getAttribute('aria-expanded');
-
-            for (i = 0; i < items.length; i++) {
-                items[i].setAttribute('aria-expanded', 'false');
-            }
-
-            if (itemToggle == 'false') {
-                this.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        items.forEach(item => item.addEventListener('click', toggleAccordion));
-
-    </script>
-    <!-- //faq -->
-    <!-- MENU-JS -->
-    <script>
-        $(window).on("scroll", function() {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
-
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function() {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function() {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function() {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-
-    </script>
-    <!-- //MENU-JS -->
-
-    <!-- disable body scroll which navbar is in active -->
-    <script>
-        $(function() {
-            $('.navbar-toggler').click(function() {
-                $('body').toggleClass('noscroll');
-            })
-        });
-
-    </script>
-    <!-- //disable body scroll which navbar is in active -->
-
-    <!-- //bootstrap -->
-    <script src="{{asset('jobseeker/user/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/theme-change.js')}}"></script>
+     <script src="{{asset('user/assets/js/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{asset('user/assets/js/bootstrap.min.js')}}"></script>
 
 </body>
 

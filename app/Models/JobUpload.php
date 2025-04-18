@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Models;
-use App\Models\JobCategories;
-use App\Models\JobDepartments;
+use App\Models\JobCategory;
+use App\Models\JobDepartment;
 use App\Models\Country;
 use App\Models\States;
 use App\Models\Cities;
@@ -22,11 +22,11 @@ class JobUpload extends Model
   
 
     public function category() {
-        return $this->belongsTo(JobCategories::class, 'category_id');
+        return $this->belongsTo(JobCategory::class, 'category_id');
     }
 
     public function department() {
-        return $this->belongsTo(JobDepartments::class, 'department_id');
+        return $this->belongsTo(JobDepartment::class, 'department_id');
     }
 
     public function country() {

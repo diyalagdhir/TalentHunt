@@ -9,12 +9,12 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TalentHunt - My Jobs</title>
+    <title>My Jobs</title>
     <!--/google-fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <!--//google-fonts -->
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('jobseeker/user/assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{asset('user/assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -74,6 +74,12 @@ Author URL: http://w3layouts.com
             @endforeach
         </tbody>
     </table>
+
+        {{-- Pagination Links --}}
+        <div class="d-flex justify-content-center mt-4">
+            {{ $appliedJobs->links('pagination::bootstrap-4') }} <!-- Use Bootstrap 4 pagination -->
+        </div>
+
 </div>
 
 <!-- footer -->
@@ -82,34 +88,13 @@ Author URL: http://w3layouts.com
 
 <!-- Js scripts -->
 <!-- Template JavaScript -->
-<script src="{{ asset('jobseeker/user/assets/js/jquery-3.3.1.min.js') }}"></script>
-<script src="{{ asset('jobseeker/user/assets/js/theme-change.js') }}"></script>
+<script src="{{ asset('user/assets/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('user/assets/js/theme-change.js') }}"></script>
 <!--/Tabs-->
-<script src="{{ asset('jobseeker/user/assets/js/jquery-1.9.1.min.js') }}"></script>
-<script src="{{ asset('jobseeker/user/assets/js/easyResponsiveTabs.js') }}"></script>
-<script src="{{ asset('jobseeker/user/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('user/assets/js/jquery-1.9.1.min.js') }}"></script>
+<script src="{{ asset('user/assets/js/easyResponsiveTabs.js') }}"></script>
+<script src="{{ asset('user/assets/js/bootstrap.min.js') }}"></script>
 
-<!--Plug-in Initialisation-->
-<script type="text/javascript">
-    $(document).ready(function() {
-        //Horizontal Tab
-        $('#parentHorizontalTab').easyResponsiveTabs({
-            type: 'default', //Types: default, vertical, accordion
-            width: 'auto', //auto or any width like 600px
-            fit: true, // 100% fit in a container
-            tabidentify: 'hor_1', // The tab groups identifier
-            activate: function(event) { // Callback function if tab is switched
-                var $tab = $(this);
-                var $info = $('#nested-tabInfo');
-                var $name = $('span', $info);
-                $name.text($tab.text());
-                $info.show();
-            }
-        });
-    });
-
-</script>
-<!--//Tabs-->
 <!-- MENU-JS -->
 <script>
     $(window).on("scroll", function() {
@@ -139,17 +124,6 @@ Author URL: http://w3layouts.com
 
 </script>
 <!-- //MENU-JS -->
-
-<!-- disable body scroll which navbar is in active -->
-<script>
-    $(function() {
-        $('.navbar-toggler').click(function() {
-            $('body').toggleClass('noscroll');
-        })
-    });
-
-</script>
-<!-- //disable body scroll which navbar is in active -->
 
 </body>
 
